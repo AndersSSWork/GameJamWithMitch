@@ -7,9 +7,11 @@ public class EventHandler : MonoBehaviour
     [SerializeField]
     int _eventsToCall;
 
-    public void CallEvent(TextContents ToDisplay, bool ignoreCount = false)
+
+
+    public void CallEvent(TextContents toDisplay, int callerId = -1, bool ignoreCount = false)
     {
-        TextContentUIDisplay.SetDisplayText(ToDisplay);
+        TextContentUIDisplay.SetDisplayText(toDisplay);
 
         if (!ignoreCount)
         {

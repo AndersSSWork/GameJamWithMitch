@@ -7,12 +7,18 @@ public class EventHit : MonoBehaviour
     [SerializeField]
     TextContents displayText;
 
+    [SerializeField]
+    bool hideCount;
+
+    [SerializeField]
+    int id;
+
     public void OnTriggerEnter(Collider collider)
     {
         Debug.Log("Hit a trigger");
         if(displayText != null)
         {
-            GetComponentInParent<EventHandler>().CallEvent(displayText);
+            GetComponentInParent<EventHandler>().CallEvent(displayText, id, hideCount);
             collider.gameObject.GetComponent<CarMov>().StopCar();
             Destroy(this.gameObject);
         }
