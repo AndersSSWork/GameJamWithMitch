@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CarMov : MonoBehaviour
 {
-    [Range(0, 1000)]
+    [Range(0, 10)]
     public float acceleration = 1f;
     [Range(0, 1)]
     public float turnSpeed = 0.1f;
@@ -15,6 +15,8 @@ public class CarMov : MonoBehaviour
     public float turnPhysicsPercentage;
 
     public float maxSpeed = 30;
+
+    private int _groundsTouching = 0;
 
     private Rigidbody _rigidBody;
 
@@ -28,21 +30,24 @@ public class CarMov : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
         float vertical = Input.GetAxis("Vertical");
         float horizontal = Input.GetAxis("Horizontal");
         if (horizontal != 0)
         {
             if (turnPhysicsPercentage != 1)
             {
-                this.transform.Rotate(_rigidBody.transform.up, turnSpeed * horizontal * (1-turnPhysicsPercentage));
+                if (_groundsTouching > 0)
+                {
+                    this.transform.Rotate(_rigidBody.transform.up, turnSpeed * horizontal * (1 - turnPhysicsPercentage));
+                }
             }
             if (turnPhysicsPercentage != 0)
             {
                 _rigidBody.angularVelocity = _rigidBody.angularVelocity * turnSpeed * turnPhysicsPercentage;
             }
         }
-        if (vertical != 0)
+        if (vertical != 0 && _groundsTouching > 0)
         {
             //TODO I'm thinking that the faster you are, the slower it should accelerate, and same with turning
 
@@ -62,5 +67,16 @@ public class CarMov : MonoBehaviour
     public void StopCar()
     {
         _rigidBody.velocity = new Vector3(0, 0, 0);
+    }
+
+
+    public void OnCollisionEnter()
+    {
+        ++_groundsTouching;
+    }
+
+    public void OnCollisionExit()
+    {
+        --_groundsTouching;
     }
 }
