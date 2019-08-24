@@ -10,14 +10,20 @@ using UnityEngine.UI;
  * It's parameters are: 
  *      1. the panel holding the dialog text
  *      2. the 3 text items displating title, contents and reponse
- *      3. the display text, which will be dynamic during runtime
- * Functions:
+ *      3. the display text, which will be dynamic during runtime, set by SetDisplayText.
+ *      
+ * Private Functions:
  *      1. Update - sets the panel visibiity and text values
  *      2. OnResponseClick - triggers the after click script and clears displayText
+ *      
+ * Public Functions
+ *      1. SetDisplayText - sets the displayText, used to clear the display text in OnResponseClick
  */
 public class TextContentUIDisplay : MonoBehaviour
 {
-    public TextContents displayText;
+    private static TextContentUIDisplay instance;
+
+    [SerializeField] TextContents displayText;
 
     [SerializeField] GameObject panel;
 
@@ -28,7 +34,7 @@ public class TextContentUIDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        instance = this;
     }
 
     // Update is called once per frame
@@ -52,6 +58,11 @@ public class TextContentUIDisplay : MonoBehaviour
     {
         // TODO: trigger after click script
 
-        displayText = null;
+        SetDisplayText(null);
+    }
+
+    public static void SetDisplayText(TextContents contents)
+    {
+        instance.displayText = contents;
     }
 }
