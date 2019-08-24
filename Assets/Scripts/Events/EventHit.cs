@@ -7,5 +7,6 @@ public class EventHit : MonoBehaviour
     public void OnTriggerEnter(Collider collider)
     {
         Debug.Log("Hit a trigger");
+        
     }
 }
