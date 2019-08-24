@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class CarMov : MonoBehaviour
 {
-    [Range(0, 1)]
+    [Range(0, 1000)]
     public float acceleration = 1f;
     [Range(0, 1)]
     public float turnSpeed = 0.1f;
+
+    //How much the turn is physics based compared to just rotating the body along with its velocity
+    //Higher is more physics
+    [Range(0, 1)]
+    public float turnPhysicsPercentage;
 
     public float maxSpeed = 30;
 
@@ -18,8 +23,6 @@ public class CarMov : MonoBehaviour
         _rigidBody = GetComponent<Rigidbody>();
     }
 
-    public float _currentSpeed = 0;
-
 //TODO if we have time for it, make the camera tilt a bit to the side you turn to, to give the sense of turning
 
     // Update is called once per frame
@@ -28,29 +31,36 @@ public class CarMov : MonoBehaviour
 
         float vertical = Input.GetAxis("Vertical");
         float horizontal = Input.GetAxis("Horizontal");
-        if(horizontal != 0)
+        if (horizontal != 0)
         {
-            this.transform.Rotate(_rigidBody.transform.up, turnSpeed * horizontal);
-
+            if (turnPhysicsPercentage != 1)
+            {
+                this.transform.Rotate(_rigidBody.transform.up, turnSpeed * horizontal * (1-turnPhysicsPercentage));
+            }
+            if (turnPhysicsPercentage != 0)
+            {
+                _rigidBody.angularVelocity = _rigidBody.angularVelocity * turnSpeed * turnPhysicsPercentage;
+            }
         }
         if (vertical != 0)
         {
             //TODO I'm thinking that the faster you are, the slower it should accelerate, and same with turning
 
-            _currentSpeed += acceleration * vertical;
-            if(_currentSpeed > maxSpeed && _currentSpeed > 0)
-            {
-                _currentSpeed = maxSpeed;
+            Vector3 attemptedSpeed = _rigidBody.velocity + _rigidBody.transform.right * acceleration * vertical * -1;
+            if(!(attemptedSpeed.magnitude > maxSpeed && vertical > 0) && !(attemptedSpeed.magnitude < maxSpeed * -1 && vertical < 0))
+            { 
+                _rigidBody.velocity = attemptedSpeed;
             }
-            else if(_currentSpeed < 0 && _currentSpeed < maxSpeed * -1)
-            {
-                _currentSpeed = maxSpeed * -1;
-            }
-            _rigidBody.velocity = _rigidBody.transform.right * _currentSpeed * -1;
         }
-        else
+        if(_rigidBody.angularVelocity.magnitude > 0)
         {
-            _currentSpeed = _rigidBody.velocity.x;// _currentSpeed > 0 ? _rigidBody.velocity.x : _rigidBody.velocity.x * -1;
+            //This ensures that it doesn't slide to the side too much
+            _rigidBody.angularVelocity = _rigidBody.angularVelocity * 0.9f;
         }
+    }
+
+    public void StopCar()
+    {
+        _rigidBody.velocity = new Vector3(0, 0, 0);
     }
 }
