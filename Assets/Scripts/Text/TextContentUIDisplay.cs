@@ -9,11 +9,11 @@ using UnityEngine.UI;
  * This component is placed on a UI manager component.
  * It's parameters are: 
  *      1. the panel holding the dialog text
- *      2. the 
- * 
- * 
- * 
- * 
+ *      2. the 3 text items displating title, contents and reponse
+ *      3. the display text, which will be dynamic during runtime
+ * Functions:
+ *      1. Update - sets the panel visibiity and text values
+ *      2. OnResponseClick - triggers the after click script and clears displayText
  */
 public class TextContentUIDisplay : MonoBehaviour
 {
