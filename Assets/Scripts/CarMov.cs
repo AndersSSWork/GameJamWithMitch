@@ -9,9 +9,6 @@ public class CarMov : MonoBehaviour
     [Range(0, 1)]
     public float turnSpeed = 0.1f;
 
-    [Range(0, 1)]
-    public float autoDeceleration = 0.1f;
-
     public float maxSpeed = 30;
 
     private Rigidbody _rigidBody;
@@ -29,7 +26,7 @@ public class CarMov : MonoBehaviour
     void Update()
     {
 
-        float vertical = Input.GetAxis("Vertical") * -1;
+        float vertical = Input.GetAxis("Vertical");
         float horizontal = Input.GetAxis("Horizontal");
         if(horizontal != 0)
         {
@@ -39,19 +36,17 @@ public class CarMov : MonoBehaviour
         if (vertical != 0)
         {
             //TODO I'm thinking that the faster you are, the slower it should accelerate, and same with turning
-            //_rigidBody.angularVelocity = _rigidBody.angularVelocity + this.transform.up * horizontal * turnSpeed;
+
             _currentSpeed += acceleration * vertical;
             if(_currentSpeed > maxSpeed && _currentSpeed > 0)
             {
-                Debug.Log("max");
                 _currentSpeed = maxSpeed;
             }
             else if(_currentSpeed < 0 && _currentSpeed < maxSpeed * -1)
             {
-                Debug.Log("min, " + _currentSpeed);
                 _currentSpeed = maxSpeed * -1;
             }
-            _rigidBody.velocity = _rigidBody.transform.right * _currentSpeed;
+            _rigidBody.velocity = _rigidBody.transform.right * _currentSpeed * -1;
         }
         else
         {
