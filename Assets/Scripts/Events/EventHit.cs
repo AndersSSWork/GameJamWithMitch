@@ -13,6 +13,7 @@ public class EventHit : MonoBehaviour
         if(displayText != null)
         {
             GetComponentInParent<EventHandler>().CallEvent(displayText);
+            collider.gameObject.GetComponent<CarMov>().StopCar();
             Destroy(this.gameObject);
         }
     }
