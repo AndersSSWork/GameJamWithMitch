@@ -13,7 +13,7 @@ public class TextContents : ScriptableObject
     // this will be displayed as the button text
     public string response;
 }
-
+#if UNITY_EDITOR
 [CustomEditor(typeof(TextContents))][CanEditMultipleObjects]
 public class TextContentsEditor : Editor
 {
@@ -27,3 +27,4 @@ public class TextContentsEditor : Editor
     }
 
 }
+#endif
