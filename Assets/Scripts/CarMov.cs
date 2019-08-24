@@ -11,6 +11,8 @@ public class CarMov : MonoBehaviour
 
     public Rigidbody rigidBody;
 
+//TODO Need to make most of the velocity turn with it as it turns
+
 //TODO if we have time for it, make the camera tilt a bit to the side you turn to, to give the sense of turning
 
     // Update is called once per frame
