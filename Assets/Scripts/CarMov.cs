@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class CarMov : MonoBehaviour
 {
-    public float speed = 1f;
+    [Range(0, 1)]
+    public float acceleration = 1f;
+    [Range(0, 1)]
+    public float turnSpeed = 0.1f;
 
-    private Rigidbody _rigidBody;
+    public Rigidbody rigidBody;
 
-    public void Start()
-    {
-        _rigidBody = GetComponent<Rigidbody>();
-    }
+//TODO if we have time for it, make the camera tilt a bit to the side you turn to, to give the sense of turning
 
     // Update is called once per frame
     void Update()
@@ -20,8 +20,12 @@ public class CarMov : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         if(vertical != 0 || horizontal != 0)
         {
-            _rigidBody.velocity = _rigidBody.velocity + -1* this.transform.right * vertical * speed + this.transform.forward * horizontal * speed;
-            Debug.Log(_rigidBody.velocity);
+//TODO I'm thinking that the faster you are, the slower it should accelerate, and same with turning
+            Vector3 localRight = transform.InverseTransformDirection(transform.right);
+            rigidBody.velocity = rigidBody.velocity + -1* rigidBody.transform.right * vertical * acceleration;
+            Debug.Log(rigidBody.transform.right);
+            rigidBody.angularVelocity = rigidBody.angularVelocity + this.transform.up * horizontal * turnSpeed;
         }
+
     }
 }
