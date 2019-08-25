@@ -14,9 +14,13 @@ public class CarMov : MonoBehaviour
     [Range(0, 1)]
     public float turnPhysicsPercentage;
 
+    [SerializeField][Range(0, 1)]
+    float _turnAdjusting = 0.8f; //How much it retains the sideways physics, higher = more physics
+
     public float maxSpeed = 30;
 
     private int _groundsTouching = 0;
+    private bool _isBackingUp = false;
 
     private Rigidbody _rigidBody;
 
@@ -50,9 +54,9 @@ public class CarMov : MonoBehaviour
         if (vertical != 0 && _groundsTouching > 0)
         {
             //TODO I'm thinking that the faster you are, the slower it should accelerate, and same with turning
-
+            
             Vector3 attemptedSpeed = _rigidBody.velocity + _rigidBody.transform.right * acceleration * vertical * -1;
-            if(!(attemptedSpeed.magnitude > maxSpeed && vertical > 0) && !(attemptedSpeed.magnitude < maxSpeed * -1 && vertical < 0))
+            if(!(attemptedSpeed.magnitude > maxSpeed))
             { 
                 _rigidBody.velocity = attemptedSpeed;
             }
@@ -60,7 +64,12 @@ public class CarMov : MonoBehaviour
         if(_rigidBody.angularVelocity.magnitude > 0)
         {
             //This ensures that it doesn't slide to the side too much
-            _rigidBody.angularVelocity = _rigidBody.angularVelocity * 0.9f;
+            //_rigidBody.angularVelocity = _rigidBody.angularVelocity * 0.9f;
+        }
+        if ((_rigidBody.velocity.z != 0 || _rigidBody.velocity.x != 0) && vertical >= 0)
+        {
+            float potBack = Vector3.Dot(_rigidBody.velocity, _rigidBody.transform.right) > 0 ? 1 : -1;
+            _rigidBody.velocity = (1-_turnAdjusting) * _rigidBody.transform.right * (new Vector2(_rigidBody.velocity.x, _rigidBody.velocity.z).magnitude) * potBack + _rigidBody.velocity * _turnAdjusting;
         }
     }
 
