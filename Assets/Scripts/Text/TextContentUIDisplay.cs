@@ -56,7 +56,7 @@ public class TextContentUIDisplay : MonoBehaviour
 
     public void OnResponseClick()
     {
-        // TODO: trigger after click script
+        displayText.ExecuteAction();
 
         SetDisplayText(null);
     }
