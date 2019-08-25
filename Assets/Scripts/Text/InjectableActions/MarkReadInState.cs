@@ -7,6 +7,10 @@ public class MarkReadInState : InjectableResponseAction
 {
     public override void ExecuteResponseAction(TextContents contents)
     {
+        if(DialogState.hasVisited == null)
+        {
+            DialogState.hasVisited = new Dictionary<int, bool>();
+        }
         DialogState.hasVisited[contents.id] = true;
     }
 }
