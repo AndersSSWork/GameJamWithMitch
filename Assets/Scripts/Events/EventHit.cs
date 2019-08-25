@@ -15,7 +15,7 @@ public class EventHit : MonoBehaviour
 
     public void OnTriggerEnter(Collider collider)
     {
-        if(displayText != null)
+        if(displayText != null && collider.gameObject.tag == "Player")
         {
             GetComponentInParent<EventHandler>().CallEvent(displayText, id, hideCount);
             collider.gameObject.GetComponent<CarMov>().StopCar();
