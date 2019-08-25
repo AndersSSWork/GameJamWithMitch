@@ -20,6 +20,7 @@ public class EventHandler : MonoBehaviour
         if(_currentUI == null)
         {
             _currentUI = GameObject.Instantiate(_uiPrefab, _canvasTransform);
+            _currentUI.GetComponent<TextContentUIDisplay>().Start();
         }
         TextContentUIDisplay.SetDisplayText(toDisplay);
 

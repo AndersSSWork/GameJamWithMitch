@@ -20,6 +20,7 @@ public class EventHit : MonoBehaviour
         {
             GetComponentInParent<EventHandler>().CallEvent(displayText, id, hideCount);
             collider.gameObject.GetComponent<CarMov>().StopCar();
+            Debug.Log(collider.gameObject.tag);
             Destroy(this.gameObject);
         }
     }

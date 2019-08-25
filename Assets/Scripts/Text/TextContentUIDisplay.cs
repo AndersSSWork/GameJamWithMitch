@@ -32,7 +32,7 @@ public class TextContentUIDisplay : MonoBehaviour
     [SerializeField] Text response;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         instance = this;
     }
@@ -58,11 +58,18 @@ public class TextContentUIDisplay : MonoBehaviour
     {
         displayText.ExecuteAction();
 
-        SetDisplayText(null);
+        //SetDisplayText(null);
     }
 
     public static void SetDisplayText(TextContents contents)
     {
-        instance.displayText = contents;
+        if (instance != null)
+        {
+            instance.displayText = contents;
+        }
+        else
+        {
+            Debug.Log("instance was null");
+        }
     }
 }
