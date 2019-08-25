@@ -34,7 +34,6 @@ public class CarMov : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         float vertical = Input.GetAxis("Vertical");
         float horizontal = Input.GetAxis("Horizontal");
         if (horizontal != 0)
@@ -66,10 +65,11 @@ public class CarMov : MonoBehaviour
             //This ensures that it doesn't slide to the side too much
             //_rigidBody.angularVelocity = _rigidBody.angularVelocity * 0.9f;
         }
-        if ((_rigidBody.velocity.z != 0 || _rigidBody.velocity.x != 0) && vertical >= 0)
+        if (_groundsTouching > 0 && (_rigidBody.velocity.z != 0 || _rigidBody.velocity.x != 0) && vertical >= 0)
         {
             float potBack = Vector3.Dot(_rigidBody.velocity, _rigidBody.transform.right) > 0 ? 1 : -1;
-            _rigidBody.velocity = (1-_turnAdjusting) * _rigidBody.transform.right * (new Vector2(_rigidBody.velocity.x, _rigidBody.velocity.z).magnitude) * potBack + _rigidBody.velocity * _turnAdjusting;
+            Vector3 adjustedVelocity = (1 - _turnAdjusting) * _rigidBody.transform.right * (new Vector2(_rigidBody.velocity.x, _rigidBody.velocity.z).magnitude) * potBack;
+            _rigidBody.velocity = new Vector3(adjustedVelocity.x, _rigidBody.velocity.y, adjustedVelocity.z) + _rigidBody.velocity * _turnAdjusting;
         }
     }
 
