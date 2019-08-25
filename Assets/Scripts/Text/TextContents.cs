@@ -17,7 +17,10 @@ public class TextContents : ScriptableObject
     public InjectableResponseAction action;
     public void ExecuteAction()
     {
-        action.ExecuteResponseAction(this);
+        if (action != null)
+        {
+            action.ExecuteResponseAction(this);
+        }
     }
 }
 #if UNITY_EDITOR

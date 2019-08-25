@@ -57,7 +57,7 @@ public class TextContentUIDisplay : MonoBehaviour
     public void OnResponseClick()
     {
         displayText.ExecuteAction();
-
+        Destroy(this.gameObject);
         //SetDisplayText(null);
     }
 

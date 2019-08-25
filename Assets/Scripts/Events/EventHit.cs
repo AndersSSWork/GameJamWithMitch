@@ -15,12 +15,10 @@ public class EventHit : MonoBehaviour
 
     public void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("Hit a trigger");
         if(displayText != null)
         {
             GetComponentInParent<EventHandler>().CallEvent(displayText, id, hideCount);
             collider.gameObject.GetComponent<CarMov>().StopCar();
-            Debug.Log(collider.gameObject.tag);
             Destroy(this.gameObject);
         }
     }
