@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HintContent : MonoBehaviour
+[CreateAssetMenu(fileName = "NewHintContent", menuName = "ScriptableObjects/HintContent", order = 2)]
+public class HintContent : ScriptableObject
 {
     public string hintGiver;
     public string hintContent;
