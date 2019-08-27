@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CarMov : MonoBehaviour
 {
-    [Range(0, 10)]
+    [Range(0, 100)]
     public float acceleration = 1f;
-    [Range(0, 1)]
+    [Range(0, 50)]
     public float turnSpeed = 0.1f;
 
     //How much the turn is physics based compared to just rotating the body along with its velocity
@@ -20,7 +20,7 @@ public class CarMov : MonoBehaviour
     public float maxSpeed = 30;
 
     private int _groundsTouching = 0;
-    private bool _isBackingUp = false;
+    private bool _stopped = false;
 
     private Rigidbody _rigidBody;
 
@@ -34,8 +34,13 @@ public class CarMov : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float vertical = Input.GetAxis("Vertical");
-        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = 0;
+        float horizontal = 0;
+        if (!_stopped)
+        {
+            vertical = Input.GetAxis("Vertical") * Time.deltaTime;
+            horizontal = Input.GetAxis("Horizontal") * Time.deltaTime;
+        }
         if (horizontal != 0)
         {
             if (turnPhysicsPercentage != 1)
@@ -76,6 +81,12 @@ public class CarMov : MonoBehaviour
     public void StopCar()
     {
         _rigidBody.velocity = new Vector3(0, 0, 0);
+        _stopped = true;
+    }
+
+    public void EndStop()
+    {
+        _stopped = false;
     }
 
 

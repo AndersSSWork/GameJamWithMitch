@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EventHandler : MonoBehaviour
 {
@@ -15,14 +16,14 @@ public class EventHandler : MonoBehaviour
     [SerializeField]
     Transform _canvasTransform;
 
-    public void CallEvent(TextContents toDisplay, int callerId = -1, bool ignoreCount = false)
+    public void CallEvent(TextContents toDisplay, int callerId = -1, bool ignoreCount = false, UnityAction OnClick = null)
     {
         if(_currentUI == null)
         {
             _currentUI = GameObject.Instantiate(_uiPrefab, _canvasTransform);
             _currentUI.GetComponent<TextContentUIDisplay>().Start();
         }
-        TextContentUIDisplay.SetDisplayText(toDisplay);
+        TextContentUIDisplay.SetDisplayText(toDisplay, OnClick);
 
         if (!ignoreCount)
         {

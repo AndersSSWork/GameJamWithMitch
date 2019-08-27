@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 /*
  * Readme:
@@ -31,6 +32,8 @@ public class TextContentUIDisplay : MonoBehaviour
     [SerializeField] Text content;
     [SerializeField] Text response;
 
+    private static UnityAction _npcHead;
+
     // Start is called before the first frame update
     public void Start()
     {
@@ -57,19 +60,20 @@ public class TextContentUIDisplay : MonoBehaviour
     public void OnResponseClick()
     {
         displayText.ExecuteAction();
+        if(_npcHead != null)
+        {
+            _npcHead.Invoke();
+        }
         Destroy(this.gameObject);
         //SetDisplayText(null);
     }
 
-    public static void SetDisplayText(TextContents contents)
+    public static void SetDisplayText(TextContents contents, UnityAction npc = null)
     {
         if (instance != null)
         {
             instance.displayText = contents;
-        }
-        else
-        {
-            Debug.Log("instance was null");
+            _npcHead = npc;
         }
     }
 }
