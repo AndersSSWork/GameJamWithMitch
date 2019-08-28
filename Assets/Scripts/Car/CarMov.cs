@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CarMov : MonoBehaviour
 {
-    [Range(0, 100)]
+    [Range(0, 150)]
     public float acceleration = 1f;
     [Range(0, 50)]
     public float turnSpeed = 0.1f;
@@ -18,6 +18,7 @@ public class CarMov : MonoBehaviour
     float _turnAdjusting = 0.8f; //How much it retains the sideways physics, higher = more physics
 
     public float maxSpeed = 30;
+    public float maxVelocityCrash = 5;
 
     private int _groundsTouching = 0;
     private bool _stopped = false;
@@ -53,7 +54,7 @@ public class CarMov : MonoBehaviour
             }
             if (turnPhysicsPercentage != 0)
             {
-                _rigidBody.angularVelocity = _rigidBody.angularVelocity * turnSpeed * turnPhysicsPercentage;
+                _rigidBody.angularVelocity = _rigidBody.angularVelocity + _rigidBody.transform.up * turnSpeed * turnPhysicsPercentage * horizontal;
             }
         }
         if (vertical != 0 && _groundsTouching > 0)
@@ -91,8 +92,29 @@ public class CarMov : MonoBehaviour
     }
 
 
-    public void OnCollisionEnter()
+    public void OnCollisionEnter(Collision collision)
     {
+        if (_groundsTouching > 0)
+        {
+            if (_rigidBody.angularVelocity.y > maxVelocityCrash)
+            {
+                _rigidBody.angularVelocity = new Vector3(_rigidBody.angularVelocity.x, 0, _rigidBody.angularVelocity.z);
+            }
+            Vector3 newVelocity = _rigidBody.velocity;
+            if (newVelocity.x > maxVelocityCrash)
+            {
+                newVelocity.x = maxVelocityCrash;
+            }
+            if (newVelocity.y > maxVelocityCrash)
+            {
+                newVelocity.y = maxVelocityCrash;
+            }
+            if (newVelocity.z > maxVelocityCrash)
+            {
+                newVelocity.z = maxVelocityCrash;
+            }
+            _rigidBody.velocity = newVelocity;
+        }
         ++_groundsTouching;
     }
 
