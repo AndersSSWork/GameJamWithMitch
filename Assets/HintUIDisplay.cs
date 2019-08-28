@@ -16,9 +16,14 @@ public class HintUIDisplay : MonoBehaviour
     void Update()
     {
         // Toggle Hint Notebook
-        if (Input.GetKeyDown(KeyCode.H))
+        if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.H))
         {
             panel.SetActive(!panel.activeSelf);
+        }
+
+        if (TextContentUIDisplay.getIsOpen())
+        {
+            panel.SetActive(false);
         }
     }
 }

@@ -50,6 +50,11 @@ public class TextContentUIDisplay : MonoBehaviour
             title.text = displayText.title;
             content.text = displayText.content;
             response.text = displayText.response;
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                OnResponseClick();
+            }
         }
         else
         {
@@ -60,12 +65,15 @@ public class TextContentUIDisplay : MonoBehaviour
     public void OnResponseClick()
     {
         displayText.ExecuteAction();
-        if(_npcHead != null)
+
+        // Why change my behaviour... wasted time not understanding it got destroyed :( at least tell me
+        /*if(_npcHead != null)
         {
             _npcHead.Invoke();
         }
-        Destroy(this.gameObject);
-        //SetDisplayText(null);
+        Destroy(this.gameObject);*/
+
+        SetDisplayText(null);
     }
 
     public static void SetDisplayText(TextContents contents, UnityAction npc = null)
@@ -75,5 +83,10 @@ public class TextContentUIDisplay : MonoBehaviour
             instance.displayText = contents;
             _npcHead = npc;
         }
+    }
+
+    public static bool getIsOpen()
+    {
+        return instance.displayText != null;
     }
 }

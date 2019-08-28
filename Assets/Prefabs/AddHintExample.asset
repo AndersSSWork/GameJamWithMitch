@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a72180acfe9e3442a76738348985fb1, type: 3}
-  m_Name: NewAddHintAction
+  m_Name: AddHintExample
   m_EditorClassIdentifier: 
   hint: {fileID: 11400000, guid: ba9245c49d411424c94589794c048094, type: 2}
