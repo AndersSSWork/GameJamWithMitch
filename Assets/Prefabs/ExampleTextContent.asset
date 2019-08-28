@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a17261e30bc97242b2c3b050a59194e, type: 3}
-  m_Name: Example
+  m_Name: ExampleTextContent
   m_EditorClassIdentifier: 
+  id: 0
   title: Mr. Smith
   content: This is a large text box for what Smith says
   response: Oh, okay then.
+  action: {fileID: 11400000, guid: b0653e86308299244b6bad7b988842ce, type: 2}

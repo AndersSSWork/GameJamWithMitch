@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "NewAddHintAction", menuName = "ScriptableObjects/TextContentActions/AddHintAction", order = 2)]
 public class AddHintAction : InjectableResponseAction
 {
-    HintContent hint;
+    [SerializeField] HintContent hint;
 
     public override void ExecuteResponseAction(TextContents contents)
     {

@@ -30,6 +30,7 @@ public class CarMov : MonoBehaviour
     }
 
 //TODO if we have time for it, make the camera tilt a bit to the side you turn to, to give the sense of turning
+// Korius: "whoa I like that Idea"
 
     // Update is called once per frame
     void Update()
