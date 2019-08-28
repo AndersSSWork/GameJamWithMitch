@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class CarMov : MonoBehaviour
 {
-    [Range(0, 150)]
+    [Range(0, 1000)]
     public float acceleration = 1f;
     [Range(0, 50)]
     public float turnSpeed = 0.1f;
 
     //How much the turn is physics based compared to just rotating the body along with its velocity
     //Higher is more physics
-    [Range(0, 1)]
+    [Range(0, 0.4f)]
     public float turnPhysicsPercentage;
 
     [SerializeField][Range(0, 1)]
@@ -76,7 +76,7 @@ public class CarMov : MonoBehaviour
         {
             float potBack = Vector3.Dot(_rigidBody.velocity, _rigidBody.transform.right) > 0 ? 1 : -1;
             Vector3 adjustedVelocity = (1 - _turnAdjusting) * _rigidBody.transform.right * (new Vector2(_rigidBody.velocity.x, _rigidBody.velocity.z).magnitude) * potBack;
-            _rigidBody.velocity = new Vector3(adjustedVelocity.x, _rigidBody.velocity.y, adjustedVelocity.z) + _rigidBody.velocity * _turnAdjusting;
+            _rigidBody.velocity = new Vector3(adjustedVelocity.x, _rigidBody.velocity.y, adjustedVelocity.z) + _rigidBody.velocity * _turnAdjusting * Time.deltaTime;
         }
     }
 
