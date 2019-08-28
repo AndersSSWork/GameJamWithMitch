@@ -438,11 +438,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5004ae74ec346414fa4c0457c8a425aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 77.9
-  turnSpeed: 25
-  turnPhysicsPercentage: 0.2
+  acceleration: 90
+  turnSpeed: 33.5
+  turnPhysicsPercentage: 0.4
   _turnAdjusting: 0.103
   maxSpeed: 80
+  maxVelocityCrash: 5
 --- !u!54 &468394424
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -686,7 +687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ee5324713340a544963c8b3f833bca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayText: {fileID: 11400000, guid: 0632e5ab0b4b03544a694f227e547698, type: 2}
+  displayText: {fileID: 0}
   hideCount: 0
   id: 0
   attachedNPC: {fileID: 1313107032}
@@ -855,7 +856,8 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.5e-44, y: 0, z: 1, w: 1e-45}
+  m_BoundingSphereOverride: {x: 6.6016866e+31, y: 4.1245412e+30, z: 1.0394739e+21,
+    w: 7.71463e+31}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -915,7 +917,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 836080333}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
@@ -1735,7 +1737,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1347019027}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
@@ -2012,7 +2014,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1656588033}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
@@ -2517,7 +2519,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 2136145110}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
