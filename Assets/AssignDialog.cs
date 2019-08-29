@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AssignDialog : MonoBehaviour
 {
@@ -8,23 +9,13 @@ public class AssignDialog : MonoBehaviour
 
     [SerializeField] bool destroyAfterTrigger = true;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] NPC _npc;
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
         {
-            TextContentUIDisplay.SetDisplayText(contents);
+            TextContentUIDisplay.SetDisplayText(contents, _npc);
             if (destroyAfterTrigger)
             {
                 Destroy(this.gameObject);

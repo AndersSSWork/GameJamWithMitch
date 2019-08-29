@@ -32,7 +32,7 @@ public class TextContentUIDisplay : MonoBehaviour
     [SerializeField] Text content;
     [SerializeField] Text response;
 
-    private static UnityAction _npcHead;
+    private static NPC _npcHead;
 
     // Start is called before the first frame update
     public void Start()
@@ -67,16 +67,19 @@ public class TextContentUIDisplay : MonoBehaviour
         displayText.ExecuteAction();
 
         // Why change my behaviour... wasted time not understanding it got destroyed :( at least tell me
-        /*if(_npcHead != null)
+        /*Sorry for not communicating it. Have re-added it because _npcHead is needed to make the npcs 
+         * stop looking at you and using a multi injection for them would be too much
+         * */
+        if(_npcHead != null)
         {
-            _npcHead.Invoke();
+            _npcHead.StopStaring();
+            _npcHead = null;
         }
-        Destroy(this.gameObject);*/
 
         SetDisplayText(null);
     }
 
-    public static void SetDisplayText(TextContents contents, UnityAction npc = null)
+    public static void SetDisplayText(TextContents contents, NPC npc = null)
     {
         if (instance != null)
         {

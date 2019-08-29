@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class EventHandler : MonoBehaviour
 {
+    /* Deprecated due to poor communcation on my part */
+
     [SerializeField]
     int _eventsToCall;
 
@@ -23,7 +25,7 @@ public class EventHandler : MonoBehaviour
             _currentUI = GameObject.Instantiate(_uiPrefab, _canvasTransform);
             _currentUI.GetComponent<TextContentUIDisplay>().Start();
         }
-        TextContentUIDisplay.SetDisplayText(toDisplay, OnClick);
+        //TextContentUIDisplay.SetDisplayText(toDisplay, OnClick);
 
         if (!ignoreCount)
         {
