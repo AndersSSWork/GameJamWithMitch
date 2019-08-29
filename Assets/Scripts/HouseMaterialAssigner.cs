@@ -17,6 +17,14 @@ public class HouseMaterialAssigner : MonoBehaviour
                 SingleMesh.material = newMat;
             }
         }
+        RandomHouse[] ToSetFace = this.GetComponentsInChildren<RandomHouse>();
+        if(ToSetFace != null)
+        {
+            foreach(RandomHouse SingleHouse in ToSetFace)
+            {
+                SingleHouse.SetFace();
+            }
+        }
     }
 
 }
