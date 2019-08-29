@@ -25,6 +25,9 @@ public class CarMov : MonoBehaviour
 
     private Rigidbody _rigidBody;
 
+    [SerializeField]
+    AudioSource _crashSound;
+
     public void Start()
     {
         _rigidBody = GetComponent<Rigidbody>();
@@ -112,6 +115,10 @@ public class CarMov : MonoBehaviour
             if (newVelocity.z > maxVelocityCrash)
             {
                 newVelocity.z = maxVelocityCrash;
+            }
+            if(newVelocity != _rigidBody.velocity)
+            {
+                _crashSound.Play();
             }
             _rigidBody.velocity = newVelocity;
         }
