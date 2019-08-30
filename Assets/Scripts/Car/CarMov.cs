@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CarMov : MonoBehaviour
 {
-    [Range(0, 10000)]
-    public float acceleration = 8000f;
-    [Range(0, 2500)]
+    [Range(0, 1000)]
+    public float acceleration = 1f;
+    [Range(0, 50)]
     public float turnSpeed = 0.1f;
 
     //How much the turn is physics based compared to just rotating the body along with its velocity
@@ -43,8 +43,9 @@ public class CarMov : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit();
+             Application.Quit();
         }
+       
     }
 
     // Update is called once per frame
@@ -54,7 +55,7 @@ public class CarMov : MonoBehaviour
         float horizontal = 0;
         if (!_stopped)
         {
-            vertical = Input.GetAxis("Vertical") * Time.deltaTime * -1;
+            vertical = Input.GetAxis("Vertical") * Time.deltaTime;
             horizontal = Input.GetAxis("Horizontal") * Time.deltaTime;
         }
         if (horizontal != 0)
@@ -63,19 +64,19 @@ public class CarMov : MonoBehaviour
             {
                 if (_groundsTouching > 0)
                 {
-                    this.transform.Rotate(_rigidBody.transform.up, turnSpeed * horizontal *Time.deltaTime * (1 - turnPhysicsPercentage));
+                    this.transform.Rotate(_rigidBody.transform.up, turnSpeed * horizontal * (1 - turnPhysicsPercentage));
                 }
             }
             if (turnPhysicsPercentage != 0)
             {
-                _rigidBody.angularVelocity = _rigidBody.angularVelocity + _rigidBody.transform.up * turnSpeed *Time.deltaTime * turnPhysicsPercentage * horizontal;
+                _rigidBody.angularVelocity = _rigidBody.angularVelocity + _rigidBody.transform.up * turnSpeed * turnPhysicsPercentage * horizontal;
             }
         }
         if (vertical != 0 && _groundsTouching > 0)
         {
             //TODO I'm thinking that the faster you are, the slower it should accelerate, and same with turning
             
-            Vector3 attemptedSpeed = _rigidBody.velocity + _rigidBody.transform.right * acceleration * vertical * Time.deltaTime;
+            Vector3 attemptedSpeed = _rigidBody.velocity + _rigidBody.transform.right * acceleration * vertical * -1;
             float usedMaxSpeed = vertical > 0 ? maxSpeed : maxSpeed * 0.25f;
             if (!(attemptedSpeed.magnitude > usedMaxSpeed))
             { 

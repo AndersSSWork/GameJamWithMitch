@@ -25774,17 +25774,17 @@ PrefabInstance:
     - target: {fileID: 2872965579070627189, guid: 66fcdd43311cc4a48b7ce8bffec65442,
         type: 3}
       propertyPath: turnSpeed
-      value: 1600
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2872965579070627189, guid: 66fcdd43311cc4a48b7ce8bffec65442,
         type: 3}
       propertyPath: maxSpeed
-      value: 320
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 2872965579070627189, guid: 66fcdd43311cc4a48b7ce8bffec65442,
         type: 3}
       propertyPath: acceleration
-      value: 3000
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 2872965579070627194, guid: 66fcdd43311cc4a48b7ce8bffec65442,
         type: 3}
@@ -25795,6 +25795,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AngularDrag
       value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2872965579070627194, guid: 66fcdd43311cc4a48b7ce8bffec65442,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2872965579070627194, guid: 66fcdd43311cc4a48b7ce8bffec65442,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66fcdd43311cc4a48b7ce8bffec65442, type: 3}
