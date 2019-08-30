@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Seven
   m_EditorClassIdentifier: 
   id: 0
-  title: 
-  content: 
-  response: 
-  action: {fileID: 0}
+  title: Wade
+  content: 'Good to see you out here. You enjoying The Green a little? I call it that,
+    makes it sound cooler, don''t you think? '
+  response: I agree.
+  action: {fileID: 11400000, guid: 7f166c1d75528a342800ec56682ae8b5, type: 2}

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Thirteen
   m_EditorClassIdentifier: 
   id: 0
-  title: 
-  content: 
-  response: 
-  action: {fileID: 0}
+  title: George
+  content: 'Oh Hi, Manfred . I Love that we live in the same neighbourhood now. Let''s
+    hang out soon! '
+  response: 'You bet! '
+  action: {fileID: 11400000, guid: 7a35149e3d0a0a9469e455418a7d521d, type: 2}

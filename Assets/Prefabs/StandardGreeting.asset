@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   title: 
-  content: 
-  response: 
+  content: Hello there
+  response: Greetings!
   action: {fileID: 0}

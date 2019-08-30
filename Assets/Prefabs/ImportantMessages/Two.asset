@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Two
   m_EditorClassIdentifier: 
   id: 0
-  title: 
-  content: 
-  response: 
-  action: {fileID: 0}
+  title: Long
+  content: Ah, greetings, Manfred . I came by earlier, and the flowers in your window
+    looked rather parched. You should water them before they wilt in this heat.
+  response: I'll do that, thank you.
+  action: {fileID: 11400000, guid: 62541b07d83635b45a766e07226b43b7, type: 2}

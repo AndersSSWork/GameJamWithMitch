@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: TwentyThree
   m_EditorClassIdentifier: 
   id: 0
-  title: 
-  content: 
-  response: 
-  action: {fileID: 0}
+  title: Mary
+  content: Hey, Manfred . How's life in the green neighbourhood? You gotten settled
+    in yet? Lemme know if you ever wanna come hang out.
+  response: ' I''ll call later then!'
+  action: {fileID: 11400000, guid: 02e5ff7593da6994ba8f53dc85a9f3f2, type: 2}

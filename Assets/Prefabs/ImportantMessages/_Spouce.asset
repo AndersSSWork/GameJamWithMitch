@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: _Spouce
   m_EditorClassIdentifier: 
   id: 0
-  title: 
-  content: 
-  response: 
+  title: Sweetie
+  content: ' Welcome home, Manfred . I was looking for you. '
+  response: I finally found our House!
   action: {fileID: 0}

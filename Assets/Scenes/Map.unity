@@ -13928,17 +13928,6 @@ PrefabInstance:
       propertyPath: _npc
       value: 
       objectReference: {fileID: 647212806}
-    - target: {fileID: 932504707338001950, guid: ee111d568ac4c284b9a4b0c379ee078c,
-        type: 3}
-      propertyPath: destroyAfterTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 932504707338001950, guid: ee111d568ac4c284b9a4b0c379ee078c,
-        type: 3}
-      propertyPath: contents
-      value: 
-      objectReference: {fileID: 11400000, guid: 48d24d7d66a756449953e289c4d5c14d,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee111d568ac4c284b9a4b0c379ee078c, type: 3}
 --- !u!4 &1096180633 stripped
@@ -25781,21 +25770,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2872965579070627189, guid: 66fcdd43311cc4a48b7ce8bffec65442,
-        type: 3}
-      propertyPath: turnSpeed
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 2872965579070627189, guid: 66fcdd43311cc4a48b7ce8bffec65442,
-        type: 3}
-      propertyPath: maxSpeed
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 1638575359843034897, guid: 66fcdd43311cc4a48b7ce8bffec65442,
-        type: 3}
-      propertyPath: muteButton
-      value: m
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66fcdd43311cc4a48b7ce8bffec65442, type: 3}

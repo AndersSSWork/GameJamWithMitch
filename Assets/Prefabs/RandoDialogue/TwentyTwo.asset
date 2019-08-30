@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TwentyTwo
   m_EditorClassIdentifier: 
   id: 0
-  title: 
-  content: 
-  response: 
+  title: Patrick
+  content: 'Back in my day, we couldn''t afford to drive around in a car all day. '
+  response: I'll stop when I find my house!
   action: {fileID: 0}

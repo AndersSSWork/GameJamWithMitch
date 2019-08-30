@@ -294,6 +294,7 @@ MonoBehaviour:
   radioChangeButtonLeft: i
   volumeHigherButton: u
   volumeLowerButton: y
+  muteButton: m
   _maxRadios: 2
   volume: 100
   _volumeStep: 5
@@ -888,11 +889,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5004ae74ec346414fa4c0457c8a425aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 250
-  turnSpeed: 20
+  acceleration: 600
+  turnSpeed: 30
   turnPhysicsPercentage: 0.3
   _turnAdjusting: 0.103
-  maxSpeed: 80
+  maxSpeed: 120
   maxVelocityCrash: 5
   _crashSound: {fileID: 3486823865062570146}
 --- !u!65 &2872965579070627198

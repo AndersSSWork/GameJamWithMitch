@@ -72,7 +72,7 @@ public class MenuController : MonoBehaviour
 
     public void OnExit()
     {
-        // QUIT
+        Application.Quit();
     }
 }
 

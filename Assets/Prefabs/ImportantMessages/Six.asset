@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Six
   m_EditorClassIdentifier: 
   id: 0
-  title: 
-  content: 
-  response: 
-  action: {fileID: 0}
+  title: Jimothy
+  content: 'Oh hey, Manfred ! Want to climb in your Oak? It''s so much fun! '
+  response: Sure! Later though.
+  action: {fileID: 11400000, guid: 5c4fd96f39541244b8be7c360e77f782, type: 2}

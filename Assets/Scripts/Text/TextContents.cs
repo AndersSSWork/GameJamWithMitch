@@ -23,6 +23,7 @@ public class TextContents : ScriptableObject
         }
     }
 }
+/*
 #if UNITY_EDITOR
 [CustomEditor(typeof(TextContents))][CanEditMultipleObjects]
 public class TextContentsEditor : Editor
@@ -40,4 +41,4 @@ public class TextContentsEditor : Editor
     }
 
 }
-#endif
+#endif*/

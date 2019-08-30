@@ -36,11 +36,19 @@ public class CarMov : MonoBehaviour
         _crashSound.volume = SettingsController.SFX * originalVolume;
     }
 
-//TODO if we have time for it, make the camera tilt a bit to the side you turn to, to give the sense of turning
-// Korius: "whoa I like that Idea"
+    //TODO if we have time for it, make the camera tilt a bit to the side you turn to, to give the sense of turning
+    // Korius: "whoa I like that Idea"
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float vertical = 0;
         float horizontal = 0;
