@@ -28,4 +28,9 @@ public class Music : MonoBehaviour
     {
         radio.volume = newVolume;
     }
+
+    public void toggleMute()
+    {
+        radio.mute = !radio.mute;
+    }
 }
