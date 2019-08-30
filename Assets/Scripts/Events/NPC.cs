@@ -6,10 +6,12 @@ public class NPC : MonoBehaviour
 {
     private Quaternion _originalRotation;
 
-    private static List<Sprite> _textures;
+    //private static List<Sprite> _textures;
 
+        /*
     void Start()
     {
+        
         if (_textures == null) {
             _textures = new List<Sprite>(Resources.LoadAll<Sprite>("Faces"));
         }
@@ -20,7 +22,9 @@ public class NPC : MonoBehaviour
             GetComponentInChildren<SpriteRenderer>().sprite = texture;
             _textures.RemoveAt(chosenTexture);
         }
+        
     }
+    */
 
     public void Stare(Vector3 target)
     {

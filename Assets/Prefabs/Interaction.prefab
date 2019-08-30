@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e038409be035fd14498d2772fc537a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contents: {fileID: 11400000, guid: be44561f5bd21cd44a0d15acdaaef159, type: 2}
+  contents: {fileID: 11400000, guid: 482b84e0088e23a4d955d042354bff1d, type: 2}
   destroyAfterTrigger: 1
   _npc: {fileID: 0}
 --- !u!1 &932504708147584450
