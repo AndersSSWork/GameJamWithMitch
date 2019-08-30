@@ -6,11 +6,20 @@ public class NPC : MonoBehaviour
 {
     private Quaternion _originalRotation;
 
+    private static List<Sprite> _textures;
+
     void Start()
     {
-        Sprite[] textures = Resources.LoadAll<Sprite>("Faces");
-        Sprite texture = textures[Random.Range(0, textures.Length)];
-        GetComponentInChildren<SpriteRenderer>().sprite = texture;
+        if (_textures == null) {
+            _textures = new List<Sprite>(Resources.LoadAll<Sprite>("Faces"));
+        }
+        if (_textures != null && _textures.Count > 0)
+        {
+            int chosenTexture = Random.Range(0, _textures.Count);
+            Sprite texture = _textures[chosenTexture];
+            GetComponentInChildren<SpriteRenderer>().sprite = texture;
+            _textures.RemoveAt(chosenTexture);
+        }
     }
 
     public void Stare(Vector3 target)
