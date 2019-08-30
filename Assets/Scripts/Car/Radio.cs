@@ -11,6 +11,7 @@ public class Radio : MonoBehaviour
     public string radioChangeButtonLeft;
     public string volumeHigherButton;
     public string volumeLowerButton;
+    public string muteButton;
 
     private short _currentRadio = 0;
 
@@ -31,21 +32,26 @@ public class Radio : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(radioChangeButtonRight))
+        if (Input.GetKeyDown(radioChangeButtonRight))
         {
             ChangeRadioRight();
         }
-        else if (Input.GetKeyUp(radioChangeButtonLeft))
+        else if (Input.GetKeyDown(radioChangeButtonLeft))
         {
             ChangeRadioLeft();
         }
-        if (Input.GetKeyUp(volumeHigherButton))
+        if (Input.GetKeyDown(volumeHigherButton))
         {
             IncreaseVolume();
         }
-        else if (Input.GetKeyUp(volumeLowerButton))
+        else if (Input.GetKeyDown(volumeLowerButton))
         {
             LowerVolume();
+        }
+
+        if (Input.GetKeyDown(muteButton))
+        {
+            music.toggleMute();
         }
     }
 
