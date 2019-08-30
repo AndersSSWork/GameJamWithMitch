@@ -10,6 +10,9 @@ public class Music : MonoBehaviour
 
     public void Start()
     {
+        float originalVolume = radio.volume;
+        radio.volume = PlayerPrefs.GetFloat("MusicVolume") * originalVolume;
+
         radio.clip = music[0];
         radio.Play();
     }
