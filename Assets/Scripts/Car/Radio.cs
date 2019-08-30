@@ -29,6 +29,11 @@ public class Radio : MonoBehaviour
     [SerializeField]
     GameObject _stick;
 
+    private void Awake()
+    {
+        volume = SettingsController.Volume;
+    }
+
     // Update is called once per frame
     void Update()
     {

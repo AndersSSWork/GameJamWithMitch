@@ -28,12 +28,12 @@ public class CarMov : MonoBehaviour
     [SerializeField]
     AudioSource _crashSound;
 
-    public void Start()
+    public void Awake()
     {
         _rigidBody = GetComponent<Rigidbody>();
         //Scaling it down to ensure it has the same ratios as the game
         float originalVolume = _crashSound.volume;
-        _crashSound.volume = PlayerPrefs.GetFloat("CrashVolume") * originalVolume;
+        _crashSound.volume = SettingsController.SFX * originalVolume;
     }
 
 //TODO if we have time for it, make the camera tilt a bit to the side you turn to, to give the sense of turning
