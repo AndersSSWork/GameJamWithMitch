@@ -9309,10 +9309,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tree: {fileID: 137650, guid: 826b6a0b570e8460990010fa615b5a2a, type: 3}
-  spreadRadius: 30
+  spreadRadius: 10
   treeCoverageRadius: 1.8
   minTrees: 2
-  maxTrees: 10
+  maxTrees: 6
 --- !u!4 &904884922
 Transform:
   m_ObjectHideFlags: 0
@@ -20181,7 +20181,7 @@ PrefabInstance:
     - target: {fileID: 2872965579070627188, guid: 66fcdd43311cc4a48b7ce8bffec65442,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 138
+      value: 53
       objectReference: {fileID: 0}
     - target: {fileID: 2872965579070627188, guid: 66fcdd43311cc4a48b7ce8bffec65442,
         type: 3}
@@ -20191,7 +20191,7 @@ PrefabInstance:
     - target: {fileID: 2872965579070627188, guid: 66fcdd43311cc4a48b7ce8bffec65442,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -164.7
+      value: -677
       objectReference: {fileID: 0}
     - target: {fileID: 2872965579070627188, guid: 66fcdd43311cc4a48b7ce8bffec65442,
         type: 3}

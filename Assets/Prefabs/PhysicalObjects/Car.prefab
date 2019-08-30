@@ -274,9 +274,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radio: {fileID: 1638575359843034899}
   music:
-  - {fileID: 8300000, guid: ce6baeb436e653843aefd08a745ee8c0, type: 3}
-  - {fileID: 8300000, guid: 94d5e3619c366734d847e3fbe0d893b0, type: 3}
-  - {fileID: 8300000, guid: 81ff4ff9b598b6a4087e2d8a5db8c2c5, type: 3}
+  - {fileID: 8300000, guid: 7ba89c3ea631a354b92a9ae6fa495f82, type: 3}
+  - {fileID: 8300000, guid: 382751e061ba2c240ab97a9c354e308f, type: 3}
+  - {fileID: 8300000, guid: 1768a2a659dd7904296c1ef01086d70f, type: 3}
 --- !u!114 &1638575359843034897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -934,7 +934,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 115bab44d28746e4fb27d83fcbdca728, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
