@@ -68,7 +68,8 @@ public class CarMov : MonoBehaviour
             //TODO I'm thinking that the faster you are, the slower it should accelerate, and same with turning
             
             Vector3 attemptedSpeed = _rigidBody.velocity + _rigidBody.transform.right * acceleration * vertical * -1;
-            if(!(attemptedSpeed.magnitude > maxSpeed))
+            float usedMaxSpeed = vertical > 0 ? maxSpeed : maxSpeed * 0.25f;
+            if (!(attemptedSpeed.magnitude > usedMaxSpeed))
             { 
                 _rigidBody.velocity = attemptedSpeed;
             }
