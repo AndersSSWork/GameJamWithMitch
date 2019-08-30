@@ -20,6 +20,7 @@ public class RandomHouse : MonoBehaviour
         }
         else
         {
+            Debug.Log("Setting texture");
             HUD.GetComponent<Renderer>().material.mainTexture = specificTexture;
         }
      }
