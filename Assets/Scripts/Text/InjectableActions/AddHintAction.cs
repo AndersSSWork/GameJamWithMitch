@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewAddHintAction", menuName = "ScriptableObjects/TextContentActions/AddHintAction", order = 2)]
+[CreateAssetMenu(fileName = "NewAddHintAction", menuName= "ScriptableObjects/TextContentActions/AddHintAction", order = 2)]
 public class AddHintAction : InjectableResponseAction
 {
     [SerializeField] HintContent hint;
