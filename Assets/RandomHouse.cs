@@ -5,13 +5,23 @@ using UnityEngine;
 public class RandomHouse : MonoBehaviour
 {
       public GameObject HUD;
-     
+
+    public bool DontRandomize = false;
+    public Texture2D specificTexture = null;
+
       public void SetFace()
     {
         _AssignFace();
-        Texture2D[] textures = Resources.LoadAll<Texture2D>("Houses");
-        Texture2D texture = textures[Random.Range(0, textures.Length)];
-        HUD.GetComponent<Renderer>().material.mainTexture = texture;
+        if (!DontRandomize)
+        {
+            Texture2D[] textures = Resources.LoadAll<Texture2D>("Houses");
+            Texture2D texture = textures[Random.Range(0, textures.Length)];
+            HUD.GetComponent<Renderer>().material.mainTexture = texture;
+        }
+        else
+        {
+            HUD.GetComponent<Renderer>().material.mainTexture = specificTexture;
+        }
      }
 
     private void _AssignFace()
