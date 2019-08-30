@@ -60,6 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contents: {fileID: 11400000, guid: be44561f5bd21cd44a0d15acdaaef159, type: 2}
   destroyAfterTrigger: 1
+  _npc: {fileID: 0}
 --- !u!1 &932504708147584450
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,7 +119,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2c1e403e4cca7a0448cb34e925231060, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -211,7 +212,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2c1e403e4cca7a0448cb34e925231060, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

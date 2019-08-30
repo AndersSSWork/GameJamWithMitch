@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562325006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.7, y: 0, z: -44}
+  m_LocalPosition: {x: -19.3, y: 0, z: -44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4940899554215822712}
@@ -44,10 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tree: {fileID: 137650, guid: 826b6a0b570e8460990010fa615b5a2a, type: 3}
-  spreadRadius: 30
+  spreadRadius: 15
   treeCoverageRadius: 1.8
   minTrees: 2
-  maxTrees: 10
+  maxTrees: 6
 --- !u!1 &186835465160881997
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tree: {fileID: 137650, guid: 826b6a0b570e8460990010fa615b5a2a, type: 3}
-  spreadRadius: 10
+  spreadRadius: 5
   treeCoverageRadius: 1.8
   minTrees: 1
   maxTrees: 3
