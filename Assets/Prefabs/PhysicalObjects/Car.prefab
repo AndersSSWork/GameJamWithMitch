@@ -176,7 +176,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -785,7 +785,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2872965579070627191}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 7, y: 1, z: 6}
   m_Children:
@@ -888,9 +888,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5004ae74ec346414fa4c0457c8a425aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 338
-  turnSpeed: 33.5
-  turnPhysicsPercentage: 0.4
+  acceleration: 250
+  turnSpeed: 20
+  turnPhysicsPercentage: 0.3
   _turnAdjusting: 0.103
   maxSpeed: 80
   maxVelocityCrash: 5
@@ -1042,13 +1042,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2872965579073933956}
-  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: -0.5, y: -0.2, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.5735764, w: 0.8191521}
+  m_LocalPosition: {x: -0.545, y: -0.196, z: -0}
+  m_LocalScale: {x: 0.1, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 2872965579070627188}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 70}
 --- !u!65 &2872965579073933962
 BoxCollider:
   m_ObjectHideFlags: 0

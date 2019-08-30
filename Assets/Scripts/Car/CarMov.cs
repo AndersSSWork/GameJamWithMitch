@@ -37,49 +37,57 @@ public class CarMov : MonoBehaviour
 // Korius: "whoa I like that Idea"
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        float vertical = 0;
-        float horizontal = 0;
-        if (!_stopped)
+        if (TextContentUIDisplay.getIsOpen())
         {
-            vertical = Input.GetAxis("Vertical") * Time.deltaTime;
-            horizontal = Input.GetAxis("Horizontal") * Time.deltaTime;
+            // NO MOVING
         }
-        if (horizontal != 0)
+        else
         {
-            if (turnPhysicsPercentage != 1)
+            float vertical = 0;
+            float horizontal = 0;
+            if (!_stopped)
             {
-                if (_groundsTouching > 0)
+                vertical = Input.GetAxis("Vertical") * Time.deltaTime;
+                horizontal = Input.GetAxis("Horizontal") * Time.deltaTime;
+            }
+
+            if (horizontal != 0f && vertical != 0f)
+            {
+                if (turnPhysicsPercentage != 1)
                 {
-                    this.transform.Rotate(_rigidBody.transform.up, turnSpeed * horizontal * (1 - turnPhysicsPercentage));
+                    if (_groundsTouching > 0)
+                    {
+                        transform.Rotate(_rigidBody.transform.up, turnSpeed * horizontal * (1 - turnPhysicsPercentage) * (vertical / Mathf.Abs(vertical)));
+                    }
+                }
+                if (turnPhysicsPercentage != 0)
+                {
+                    _rigidBody.angularVelocity = _rigidBody.angularVelocity + _rigidBody.transform.up * turnSpeed * turnPhysicsPercentage * horizontal;
                 }
             }
-            if (turnPhysicsPercentage != 0)
+            if (vertical != 0 && _groundsTouching > 0)
             {
-                _rigidBody.angularVelocity = _rigidBody.angularVelocity + _rigidBody.transform.up * turnSpeed * turnPhysicsPercentage * horizontal;
+                //TODO I'm thinking that the faster you are, the slower it should accelerate, and same with turning
+
+                Vector3 attemptedSpeed = _rigidBody.velocity + _rigidBody.transform.right * acceleration * vertical * -1;
+                if (!(attemptedSpeed.magnitude > maxSpeed))
+                {
+                    _rigidBody.velocity = attemptedSpeed;
+                }
             }
-        }
-        if (vertical != 0 && _groundsTouching > 0)
-        {
-            //TODO I'm thinking that the faster you are, the slower it should accelerate, and same with turning
-            
-            Vector3 attemptedSpeed = _rigidBody.velocity + _rigidBody.transform.right * acceleration * vertical * -1;
-            if(!(attemptedSpeed.magnitude > maxSpeed))
-            { 
-                _rigidBody.velocity = attemptedSpeed;
+            if (_rigidBody.angularVelocity.magnitude > 0)
+            {
+                //This ensures that it doesn't slide to the side too much
+                //_rigidBody.angularVelocity = _rigidBody.angularVelocity * 0.9f;
             }
-        }
-        if(_rigidBody.angularVelocity.magnitude > 0)
-        {
-            //This ensures that it doesn't slide to the side too much
-            //_rigidBody.angularVelocity = _rigidBody.angularVelocity * 0.9f;
-        }
-        if (_groundsTouching > 0 && (_rigidBody.velocity.z != 0 || _rigidBody.velocity.x != 0) && vertical >= 0)
-        {
-            float potBack = Vector3.Dot(_rigidBody.velocity, _rigidBody.transform.right) > 0 ? 1 : -1;
-            Vector3 adjustedVelocity = (1 - _turnAdjusting) * _rigidBody.transform.right * (new Vector2(_rigidBody.velocity.x, _rigidBody.velocity.z).magnitude) * potBack;
-            _rigidBody.velocity = new Vector3(adjustedVelocity.x, _rigidBody.velocity.y, adjustedVelocity.z) + _rigidBody.velocity * _turnAdjusting * Time.deltaTime;
+            if (_groundsTouching > 0 && (_rigidBody.velocity.z != 0 || _rigidBody.velocity.x != 0) && vertical >= 0)
+            {
+                float potBack = Vector3.Dot(_rigidBody.velocity, _rigidBody.transform.right) > 0 ? 1 : -1;
+                Vector3 adjustedVelocity = (1 - _turnAdjusting) * _rigidBody.transform.right * (new Vector2(_rigidBody.velocity.x, _rigidBody.velocity.z).magnitude) * potBack;
+                _rigidBody.velocity = new Vector3(adjustedVelocity.x, _rigidBody.velocity.y, adjustedVelocity.z) + _rigidBody.velocity * _turnAdjusting * Time.deltaTime;
+            }
         }
     }
 
