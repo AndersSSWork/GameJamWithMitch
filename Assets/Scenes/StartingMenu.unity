@@ -2791,6 +2791,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1646887482}
   - component: {fileID: 1646887483}
+  - component: {fileID: 1646887484}
   m_Layer: 0
   m_Name: Settings
   m_TagString: Untagged
@@ -2834,6 +2835,20 @@ MonoBehaviour:
   VolumeSld: {fileID: 646395493}
   SFXTxt: {fileID: 1575554645}
   SFXSld: {fileID: 267130314}
+--- !u!114 &1646887484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646887481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d1df4cb39e3554d9f15b32ce26bcce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicVolume: {fileID: 646395493}
+  crashVolume: {fileID: 267130314}
 --- !u!1 &1748312246
 GameObject:
   m_ObjectHideFlags: 0

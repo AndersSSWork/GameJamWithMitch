@@ -17966,6 +17966,16 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1809805848131092650, guid: 16cffc121acd39d44a365016a7e65a66,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809805848131092650, guid: 16cffc121acd39d44a365016a7e65a66,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16cffc121acd39d44a365016a7e65a66, type: 3}
 --- !u!114 &1496890681 stripped
@@ -22148,7 +22158,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6.39, y: 11.31}
+  m_Size: {x: 3.67, y: 4.63}
   m_AdaptiveModeThreshold: 0.54
   m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
@@ -25314,7 +25324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contents: {fileID: 11400000, guid: 559d550f906691e4b9c5f2ccc8fbd869, type: 2}
-  destroyAfterTrigger: 1
+  destroyAfterTrigger: 0
   _npc: {fileID: 482023752}
 --- !u!65 &932504707342148209
 BoxCollider:
@@ -25341,6 +25351,7 @@ GameObject:
   - component: {fileID: 932504707342148209}
   - component: {fileID: 932504707342148208}
   - component: {fileID: 932504707342148212}
+  - component: {fileID: 932504707342148213}
   m_Layer: 0
   m_Name: Interaction
   m_TagString: Untagged
@@ -25373,7 +25384,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d98c7798f420b0b45b4267e4887a4f6e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 03abbb6e2d04a014f8ea2b8ab4529e08, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.4
   m_Pitch: 1
@@ -25459,6 +25470,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &932504707342148213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932504707342148210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11f84d9dee0d9fb45a68de6f4be62749, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &932504708143440296
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -25719,7 +25742,7 @@ PrefabInstance:
     - target: {fileID: 2872965579070627188, guid: 66fcdd43311cc4a48b7ce8bffec65442,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 513.4
+      value: 392
       objectReference: {fileID: 0}
     - target: {fileID: 2872965579070627188, guid: 66fcdd43311cc4a48b7ce8bffec65442,
         type: 3}
@@ -25729,7 +25752,7 @@ PrefabInstance:
     - target: {fileID: 2872965579070627188, guid: 66fcdd43311cc4a48b7ce8bffec65442,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -511
+      value: -490
       objectReference: {fileID: 0}
     - target: {fileID: 2872965579070627188, guid: 66fcdd43311cc4a48b7ce8bffec65442,
         type: 3}
@@ -25811,6 +25834,36 @@ PrefabInstance:
       propertyPath: Mute
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1638575359261453681, guid: 66fcdd43311cc4a48b7ce8bffec65442,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1638575359261453681, guid: 66fcdd43311cc4a48b7ce8bffec65442,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1638575359261453681, guid: 66fcdd43311cc4a48b7ce8bffec65442,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1638575359843034900, guid: 66fcdd43311cc4a48b7ce8bffec65442,
+        type: 3}
+      propertyPath: music.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 456e00c10179de845ab0061e8f0973aa, type: 3}
+    - target: {fileID: 1638575359843034900, guid: 66fcdd43311cc4a48b7ce8bffec65442,
+        type: 3}
+      propertyPath: music.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: d5059507c3abd4948813f81c4310f25f, type: 3}
+    - target: {fileID: 1638575359843034900, guid: 66fcdd43311cc4a48b7ce8bffec65442,
+        type: 3}
+      propertyPath: music.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 20641943d29473749b96442ea7c76d5c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66fcdd43311cc4a48b7ce8bffec65442, type: 3}
 --- !u!114 &4174457101133270621
