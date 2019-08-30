@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Nine
   m_EditorClassIdentifier: 
   id: 0
-  title: 
-  content: 
-  response: 
-  action: {fileID: 0}
+  title: Jerry
+  content: How are the kids these days, Manfred? Doing well?
+  response: Yeah, we're alright.
+  action: {fileID: 11400000, guid: d83290f07859ca0499cc42fedecffefe, type: 2}

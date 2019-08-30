@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd7fa34d61402db4a887f04110eeecec, type: 3}
   m_Name: Two
   m_EditorClassIdentifier: 
-  hintGiver: Long
-  hintContent: I have Flowers in my window.
-  hintColor: {r: 0, g: 0, b: 0, a: 0}
+  hintGiver: Mr Long
+  hintContent: I have Flowers in my window
+  hintColor: {r: 0, g: 0, b: 0, a: 1}

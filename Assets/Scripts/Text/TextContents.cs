@@ -34,7 +34,7 @@ public class TextContentsEditor : Editor
         myTarget.id = EditorGUILayout.IntField("ID", myTarget.id);
         myTarget.title = EditorGUILayout.TextField("Title", myTarget.title);
         myTarget.content = EditorGUILayout.TextArea(myTarget.content, GUILayout.MaxHeight(75));
-        myTarget.response = EditorGUILayout.TextField("Title", myTarget.response);
+        myTarget.response = EditorGUILayout.TextField("Response", myTarget.response);
 
         myTarget.action = (InjectableResponseAction)EditorGUILayout.ObjectField("Action", myTarget.action, typeof(InjectableResponseAction), false);
     }

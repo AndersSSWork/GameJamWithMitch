@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hintGiver: Mary
   hintContent: I live in the Green Neighbourhood.
-  hintColor: {r: 0, g: 0, b: 0, a: 0}
+  hintColor: {r: 0, g: 0, b: 0, a: 1}

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Ten
   m_EditorClassIdentifier: 
   id: 0
-  title: 
-  content: 
-  response: 
-  action: {fileID: 0}
+  title: Janine
+  content: Oh hello, ____ . Did you like those flowers I gave you? I saw them in your
+    window the other day.
+  response: 'They''re beautiful, thanks! '
+  action: {fileID: 11400000, guid: 13534528ed21c204792c1ef6a3cb27c2, type: 2}

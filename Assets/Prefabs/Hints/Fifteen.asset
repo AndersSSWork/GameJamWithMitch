@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd7fa34d61402db4a887f04110eeecec, type: 3}
   m_Name: Fifteen
   m_EditorClassIdentifier: 
-  hintGiver: Martin
+  hintGiver: Dr Martin
   hintContent: I have an Oak tree in front of my house.
-  hintColor: {r: 0, g: 0, b: 0, a: 0}
+  hintColor: {r: 0, g: 0, b: 0, a: 1}

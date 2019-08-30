@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd7fa34d61402db4a887f04110eeecec, type: 3}
   m_Name: Seven
   m_EditorClassIdentifier: 
-  hintGiver: 
-  hintContent: 
-  hintColor: {r: 0, g: 0, b: 0, a: 0}
+  hintGiver: Wade
+  hintContent: I live in the Green Neighbourhood.
+  hintColor: {r: 0, g: 0, b: 0, a: 1}
